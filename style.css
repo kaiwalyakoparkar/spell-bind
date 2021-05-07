@@ -1,0 +1,23 @@
+.bg{
+    background: url("./wand.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center ;
+}
+:root{
+    cursor: url("./wand.png"),auto;
+    --X::40vh;
+    --Y:45vw;
+}
+:root::before{
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    background:radial-gradient(circle 10vmax at var(--X) var(--Y)
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.5) 80%,
+    rgba(0,0,0,0.95) 100%);
+pointer-events: none;
+}
