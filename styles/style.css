@@ -1,13 +1,3 @@
-.bg{
-    /* background: url("./wand.jpg"); */
-    background-color: aquamarine;
-    background-size: cover;
-    height: 100vh;
-    background-position: center ;
-}
-body{
-    margin: 0;
-}
 :root{
     cursor: url("./wand.png"),auto;
     --X:40vh;
@@ -25,4 +15,11 @@ body{
     rgba(0,0,0,0.95) 100%
     );
     pointer-events: none;
+}
+body{
+    margin: 0;
+    background-color: aquamarine;
+    background-size: cover;
+    height: 100vh;
+    background-position: center ;
 }
