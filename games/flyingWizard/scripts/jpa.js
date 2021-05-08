@@ -50,14 +50,6 @@ var enemyhitSound = new Howl({
 });
 enemyhitSound.volume(.5);
 
-
-
-
-
-
-
-
-
 //game image objects
 var GameImageSimple = function(imagefile){
 	this.image = new Image();
@@ -108,5 +100,58 @@ var GameImageSimple = function(imagefile){
 		cor3 = rightX
 		cor4 = bottomY
 		*/
+	}
+}
+
+//animated game image objects
+var GameImageAnimated = function(imagefile, divider){
+	this.image = new Image();
+	this.image.src = imagefile;
+	this.cor1;
+	this.cor2;
+	this.cor3;
+	this.cor4;
+	this.currentAnimFrame = 0;
+	this.frameCounter = 0;
+	this.repCounter = 0;
+	
+	this.draw = function(stillOrAnim, x, y, startFrame, endFrame, spriteFps, rep){
+		var imageWidth, imageHeight, anchX, anchY, frameCounts;
+		imageWidth = this.image.width/divider;
+		imageHeight = this.image.height;
+		anchX = imageWidth/2;
+		anchY = imageHeight/2;
+
+		if(stillOrAnim == "still") ctx.drawImage(this.image, startFrame * imageWidth - imageWidth, 0, imageWidth, imageHeight, x-anchX, y-anchY, imageWidth, imageHeight);
+		else if(stillOrAnim == "anim"){
+			if(rep == 0){
+				if(this.currentAnimFrame < startFrame) this.currentAnimFrame = startFrame;
+				if(this.currentAnimFrame > endFrame) this.currentAnimFrame = startFrame;
+				ctx.drawImage(this.image, imageWidth * this.currentAnimFrame - imageWidth, 0, imageWidth, imageHeight, x-anchX, y-anchY, imageWidth, imageHeight);
+				this.frameCounter += spriteFps/fps;
+				if(this.frameCounter > 1){
+					this.frameCounter = 0;
+					this.currentAnimFrame += 1;
+				}
+			}else if(rep > 0){
+				if(this.repCounter < rep){
+					if(this.currentAnimFrame < startFrame) this.currentAnimFrame = startFrame;
+					if(this.currentAnimFrame > endFrame) this.currentAnimFrame = startFrame;
+					ctx.drawImage(this.image, imageWidth * this.currentAnimFrame - imageWidth, 0, imageWidth, imageHeight, x-anchX, y-anchY, imageWidth, imageHeight);
+					this.frameCounter += spriteFps/fps;
+					if(this.frameCounter > 1){
+						this.frameCounter = 0;
+						this.currentAnimFrame += 1;
+					}
+					if(this.currentAnimFrame >= endFrame - startFrame + 1) this.repCounter++;
+					if(this.repCounter >= rep) return true;
+				}
+			}
+		}
+		
+		this.cor1 = x-anchX;
+		this.cor2 = y-anchY;
+		this.cor3 = x+anchX;
+		this.cor4 = y+anchY;
 	}
 }
