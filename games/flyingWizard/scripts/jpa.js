@@ -664,3 +664,274 @@ function moveJetPacker(){
 		}
 	}
 }
+
+//weaponups
+function generateWeaponUp(){
+	if(tempWeaponUpCounter >= weaponUpTimeLimit){
+		tempWeaponUpCounter = 0;
+		var tempBulletType = Math.floor(Math.random() * 4) + 1;
+		var tempRandomY = Math.floor(Math.random() * (gameHeight - 300)) + 100;
+		switch(tempBulletType){
+			case 1 :
+				tempBulletType = "health";
+				break;
+			case 2 :
+				tempBulletType = "metal";
+				break;
+			case 3 :
+				tempBulletType = "tripleBasic";
+				break;
+			case 4 :
+				tempBulletType = "MG";
+				break;
+			default :
+				tempBulletType = "basic";
+				break;
+		}
+		weaponUp.push({
+			"bulletType" : tempBulletType,
+			"posX" : gameWidth + 100,
+			"posY" : tempRandomY
+		});
+	}
+	tempWeaponUpCounter++;
+	if(weaponUp.length > 0){
+		for(var i = 0; i < weaponUp.length; i++){
+			switch(weaponUp[i].bulletType){
+				case "health" :
+					weaponUps.draw("still", weaponUp[i].posX, weaponUp[i].posY, 1, 0, 0, 0);
+					break;
+				case "metal" :
+					weaponUps.draw("still", weaponUp[i].posX, weaponUp[i].posY, 3, 0, 0, 0);
+					break;
+				case "tripleBasic" :
+					weaponUps.draw("still", weaponUp[i].posX, weaponUp[i].posY, 4, 0, 0, 0);
+					break;
+				case "MG" :
+					weaponUps.draw("still", weaponUp[i].posX, weaponUp[i].posY, 5, 0, 0, 0);
+					break;
+			}
+			weaponUp[i].posX -= 2;
+			if(checkClick(weaponUp[i].posX, weaponUp[i].posY, jetpacker)){
+				collectSound.play();
+				switch(weaponUp[i].bulletType){
+					case "health" :
+						if(jetPacker.health < 5) jetPacker.health += 20;
+						if(jetPacker.health > 5) jetPacker.health = 20;
+						break;
+					case "metal" :
+						jetPacker.firingInterval = 600;
+						jetPacker.ammo = 30;
+						jetPacker.weaponType = weaponUp[i].bulletType;
+						break;
+					case "tripleBasic" :
+						jetPacker.firingInterval = 400;
+						jetPacker.ammo = 60;
+						jetPacker.weaponType = weaponUp[i].bulletType;
+						break;
+					case "MG" :
+						jetPacker.firingInterval = 230;
+						jetPacker.ammo = 70;
+						jetPacker.weaponType = weaponUp[i].bulletType;
+						break;
+				}
+				weaponUp.splice(i, 1);
+				i -= 1;
+			}else if(weaponUp[i].posX < -100){
+				weaponUp.splice(i, 1);
+				i -= 1;
+			}
+		}
+	}
+}
+
+function showWeaponStatus(){
+	if (jetPacker.ammo < 0) jetPacker.ammo = 0;
+	ctx.textAlign = "left";
+	switch(jetPacker.weaponType){
+		case "health" :
+			break;
+		case "basic" :
+			weaponUps.draw("still", 20, 20, 2, 0, 0, 0);
+			ctx.fillText("Unlimited", 40, 20);
+			break;
+		case "metal" :
+			weaponUps.draw("still", 20, 20, 3, 0, 0, 0);
+			ctx.fillText(jetPacker.ammo+"x", 40, 20);
+			break;
+		case "tripleBasic" :
+			weaponUps.draw("still", 20, 20, 4, 0, 0, 0);
+			ctx.fillText(jetPacker.ammo+"x", 40, 20);
+			break;
+		case "MG" :
+			weaponUps.draw("still", 20, 20, 5, 0, 0, 0);
+			ctx.fillText(jetPacker.ammo+"x", 40, 20);
+			break;
+		default :
+			weaponUps.draw("still", 20, 20, 2, 0, 0, 0);
+			ctx.fillText(jetPacker.ammo+"x", 40, 20);
+			break;
+	}
+}
+
+function generateEnemies1(){
+	
+	if(enemies1_counter < enemies1_aprnce_interval){
+		if(enemies1_counter == 0){
+			var tempRandomY = Math.random() * (gameHeight - 300) + 100;
+			var tempRandomSpeed = Math.random() * 2;
+			var distFromCenter;
+			enemies1.push({
+				"posX" : gameWidth + 100,
+				"posY" : tempRandomY,
+				"uniqSpeed" : tempRandomSpeed,
+				"initHealth" : 10,
+				"health" : 10,
+				"disFromCenter" : 30,
+				"firingTimer" : 0
+			});
+		}
+		enemies1_counter++;
+	}
+	else enemies1_counter = 0;
+	if(enemies1.length > 0){
+		for(var i = 0; i < enemies1.length; i++){
+			if(enemies1[i].posX > -100){
+				simpleEnemy.draw("still", enemies1[i].posX, enemies1[i].posY, 1, 0, 0, 0);
+				drawHealthStatus(enemies1[i], enemies1[i].posX - 50, enemies1[i].posY - enemies1[i].disFromCenter - 10 );
+				enemies1[i].posX -= .5 + enemies1[i].uniqSpeed;
+				if(enemies1[i].firingTimer < enemies1_firing_interval){
+					if(enemies1[i].firingTimer == 0) enemies1_bullets.push({"posX" : enemies1[i].posX, "posY" : enemies1[i].posY});
+					enemies1[i].firingTimer ++;
+				}else if(enemies1[i].firingTimer >= enemies1_firing_interval) enemies1[i].firingTimer = 0;
+				if(checkClick(enemies1[i].posX, enemies1[i].posY, jetpacker)){
+					enemies1.splice(i, 1);
+					i -= 1;
+					jetPacker.health -= 3;
+				}
+			}else{
+				enemies1.splice(i, 1);
+				i -= 1;
+			}
+		}
+	}
+	if(enemies1_bullets.length > 0){
+		for(var blt = 0; blt < enemies1_bullets.length; blt++){
+			if(enemies1_bullets[blt].posX < -100){
+				enemies1_bullets.splice(blt, 1);
+				blt -= 1;
+			}else{
+				enemies1_bullets[blt].posX -= 4;
+				enemyBullets.draw("still", enemies1_bullets[blt].posX, enemies1_bullets[blt].posY, 1, 0, 0, 0);
+				if(checkBulletHit(enemies1_bullets, blt)){
+					jetPacker.health -= 1;
+					blt -= 1;
+				}
+			}
+		}
+	}
+}
+
+function generateEnemies2(){
+	if(enemies2_counter < enemies2_aprnce_interval)	enemies2_counter++;
+	else{
+		var tempRandomY = Math.random() * (gameHeight - 300) + 100;
+		var tempRandomSpeed = Math.random() * 2;
+		var distFromCenter;
+		enemies2.push({
+			"posX" : gameWidth + 100,
+			"posY" : tempRandomY,
+			"uniqSpeed" : tempRandomSpeed,
+			"initHealth" : 14,
+			"health" : 14,
+			"disFromCenter" : 30,
+			"firingTimer" : 0
+		});
+		enemies2_counter = 0;
+	}
+	if(enemies2.length > 0){
+		for(var i = 0; i < enemies2.length; i++){
+			if(enemies2[i].posX > -100){
+				simpleEnemy2.draw("still", enemies2[i].posX, enemies2[i].posY, 1, 0, 0, 0);
+				drawHealthStatus(enemies2[i], enemies2[i].posX - 50, enemies2[i].posY - enemies2[i].disFromCenter - 10 );
+				enemies2[i].posX -= .5 + enemies2[i].uniqSpeed;
+				if(enemies2[i].firingTimer < enemies2_firing_interval){
+					if(enemies2[i].firingTimer == 0){
+						enemies2_bullets.push({"posX" : enemies2[i].posX, "posY" : enemies2[i].posY - 10, "yMove" : - 1});
+						enemies2_bullets.push({"posX" : enemies2[i].posX - 10, "posY" : enemies2[i].posY, "yMove" : 0});
+						enemies2_bullets.push({"posX" : enemies2[i].posX, "posY" : enemies2[i].posY + 10, "yMove" : 1});
+					}
+					enemies2[i].firingTimer ++;
+				}else if(enemies2[i].firingTimer >= enemies2_firing_interval) enemies2[i].firingTimer = 0;
+				if(checkClick(enemies2[i].posX, enemies2[i].posY, jetpacker)){
+					enemies2.splice(i, 1);
+					i -= 1;
+					jetPacker.health -= 3;
+				}
+			}else{
+				enemies2.splice(i, 1);
+				i -= 1;
+			}
+		}
+	}
+	if(enemies2_bullets.length > 0){
+		for(var blt = 0; blt < enemies2_bullets.length; blt++){
+			if(enemies2_bullets[blt].posX < -100){
+				enemies2_bullets.splice(blt, 1);
+				blt -= 1;
+			}else{
+				enemies2_bullets[blt].posX -= 5;
+				enemies2_bullets[blt].posY += enemies2_bullets[blt].yMove;
+				enemyBullets.draw("still", enemies2_bullets[blt].posX, enemies2_bullets[blt].posY, 1, 0, 0, 0);
+				if(checkBulletHit(enemies2_bullets, blt)){
+					jetPacker.health -= 1;
+					blt -= 1;
+				}
+			}
+		}
+	}
+}
+
+function drawHealthStatus(enemyObj, xPos, yPos){
+	ctx.fillStyle = "#cccccc";
+	ctx.fillRect(xPos, yPos, 100, 2);
+	ctx.fillStyle = "red";
+	ctx.fillRect(xPos, yPos, enemyObj.health * (100/enemyObj.initHealth), 2);
+	ctx.fillStyle = "black";
+}
+
+function drawPlayerHealthStatus(){
+	if(jetPacker.health > 0){
+		ctx.fillStyle = "#cccccc";
+		ctx.fillRect(jetPacker.posX - 50, jetPacker.posY - 80, 100, 3);
+		ctx.fillStyle = "red";
+		ctx.fillRect(jetPacker.posX - 50, jetPacker.posY - 80, jetPacker.health * (100/jetPacker.initHealth), 3);
+		ctx.fillStyle = "black";
+	}
+}
+
+var gameFloor = [];
+var multiFloor = 1048;
+function generateFloor(){
+	if(gameFloor.length == 0){
+		gameFloor.push({"posX" : 524, "posY" : gameHeight - 105});
+		if(multiFloor < gameWidth*2){
+			while(multiFloor < gameWidth*2){
+				gameFloor.push({"posX" : 524 + multiFloor, "posY" : gameHeight - 105});
+				multiFloor += 1048;
+			}
+		}
+	}
+	if(gameFloor.length > 0){
+		for(var i = 0; i < gameFloor.length; i++){
+			gameFloor[i].posX -= 2;
+			floor.draw("still", gameFloor[i].posX, gameFloor[i].posY, 1, 0, 0, 0);
+			if(gameFloor[i].posX + 524 < 0){
+				var lastFloorX = gameFloor[gameFloor.length-1].posX;
+				gameFloor.splice(i, 1);
+				i -= 1;
+				gameFloor.push({"posX" : 1048 + lastFloorX, "posY" : gameHeight - 105});
+			}
+		}
+	}
+}
