@@ -1,0 +1,558 @@
+:root{
+  cursor: url("./wand.png"),auto;
+  --X:40vh;
+  --Y:45vw;
+  --font-one:'Architects Daughter', cursive;
+  --font-two: 'Indie Flower', cursive;
+  --font-three: 'Shadows Into Light', cursive;
+}
+:root::before{
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  background:radial-gradient(circle 16vmax at var(--X) var(--Y),
+  rgba(0,0,0,0) 0%,
+  rgba(0,0,0,0.5) 90%,
+  rgba(0,0,0,0.95) 100%
+  );
+  pointer-events: none;
+}
+
+body{
+  margin: 0;
+  background-color: black;
+  height: 100vh;
+  background-position: center ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  height: auto;
+  width: 70vw;
+}
+
+.hide-area {
+  display: none;
+}
+
+.clickable:hover{
+  cursor: pointer;
+}
+
+.item {
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: 4;
+}
+
+.item2 {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+}
+
+body {
+  color: #FFF;
+  font-family: "Source Sans Pro",sans-serif;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  display: inline-block;
+  padding: 17% 17% 5% 17%;
+  font-weight: bolder;
+  font-size: 12em;
+  font-weight:200;
+}
+
+#intro-photo {
+  background-image: url("../img/escape-2-resized.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+#start-button {
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-width: 10px;
+  display: inline-block;
+  font-size: 7em;
+  color: #FFF;
+  text-decoration: none;
+  margin-bottom: 8%;
+}
+
+#start-button:hover {
+  color: rgba(0,0,0,0.0);
+  background-image: url(../img/play-button-4.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.narrative {
+  background-image: url(../img/narrative-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10% 10% 40% 10%;
+  font-size: 2em;
+}
+
+#countdown {
+  position: fixed;
+  z-index: 999;
+  top: 0%;
+  right: 50%;
+  border: 5px solid red;
+  padding: 1%;
+  border-radius: 5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+}
+
+.continue {
+  float: right;
+  color: #00b3b4;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.continue:hover {
+  cursor: pointer;
+}
+
+.message {
+  background-color: rgba(255,255,255,0.2);
+  font-size: 2em;
+  padding: 1%;
+}
+
+.room {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#room-one {
+  position: relative;
+  width: 1700px;
+  height: 1050px;
+}
+
+#password-img {
+  position: absolute;
+  top: 200px;
+  right: 800px;
+  width: 170px;
+  height: 290px;
+}
+
+#board {
+  position: absolute;
+  top: 230px;
+  right: 690px;
+  width: 170px;
+  height: 290px;
+}
+
+#pc {
+  position: absolute;
+  top: 330px;
+  right: 1600px;
+  width: 160px;
+  height: 140px;
+}
+
+#pc-area {
+  position: absolute;
+  top: 300px;
+  right: 1400px;
+  width: 300px;
+  height: 100px;
+  font-size: 1.5em;
+  background-color: rgba(255,255,255,0.2);
+}
+#clorox {
+  position: absolute;
+  top: 780px;
+  right:1400px;
+  width: 250px;
+  height: 250px;
+}
+
+#room-one-key {
+  position: absolute;
+  top: 600px;
+  right:1000px;
+  width: 500px;
+  height: 250px;
+}
+
+#room-two {
+  position: relative;
+  width: 1700px;
+  height: 1050px;
+}
+
+#ghost-img {
+  position: absolute;
+  top: 300px;
+  right: 1400px;
+  width: 170px;
+}
+
+#ghost-img img {
+  width: 100%;
+}
+
+#casper-message-box {
+  position: absolute;
+  top: 350px;
+  right: 650px;
+}
+
+#yes-box {
+  position: absolute;
+  top: 500px;
+  right: 1100px;
+  color: green;
+}
+
+#no-box {
+  position: absolute;
+  top: 500px;
+  right: 850px;
+  color: red;
+}
+
+#tic-tac-toe-area {
+  position: absolute;
+  top: 200px;
+  right: 650px;
+  width: 600px;
+  height: 600px;
+}
+
+.tic-tac {
+  border: 3px solid black;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.tic-tac img {
+  width: 100%;
+}
+
+.room-three {
+  background-image: url('../img/dungeon.jpg');
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  vertical-align: bottom;
+  font-size: 30px;
+  text-align: center;
+  padding: 25%;
+}
+
+/* //Hangman  */
+
+.hangman-buttons {
+  @include corners (5px);
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.5em;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-style: solid;
+  border-width: thick;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  color: #FFF;
+}
+
+.hangman-buttons:hover {
+  color: #FFF;
+  border-color: #FFF;
+  border-style: solid;
+}
+
+/* //twenty-one game// */
+
+#twenty-one {
+  display: none;
+  text-align: center;
+  font-family: "Source Sans Pro",sans-serif;
+}
+
+#reset {
+  text-align: center;
+}
+
+.hide-label {
+  display: none;
+}
+
+#caution {
+  color: #00b3b4;
+}
+
+ #roll-playerone {
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.1);
+  display: inline-block;
+  border-radius: 7em;
+  padding: 1%;
+  margin: 5% 5% 0% 5%;
+}
+
+#roll-playertwo {
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.1);
+  display: inline-block;
+  border-radius: 7em;
+  padding: 1%;
+  margin: 5% 5% 0% 5%;
+}
+
+#caution {
+  color: #00b3b4;
+  font-size: 20px;
+}
+
+.twentyone-buttons {
+  @include corners (5px);
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.5em;
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-style: solid;
+  border-width: thick;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  color: #FFF;
+}
+
+.result {
+  font-size: 50px;
+  color: #00b3b4;
+}
+
+/* Variabes */
+$orange: #ffa600;
+$green: #c1d72e;
+$blue: #82d2e5;
+$grey:#f3f3f3;
+$white: #fff;
+$base-color:$green ;
+
+/* Mixin's */
+
+@mixin transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin clear {
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+ @mixin box-size {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ @mixin transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin fade {
+  -moz-transition: all 1s ease-in;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+
+@mixin opacity {
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  @include fade;
+}
+
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+.wrapper {
+  display: none;
+  font-family: "Source Sans Pro",sans-serif;
+  height:100%;
+  text-align:center;
+  font-size:22px;
+  @include clear;
+  width:100%;
+  margin:0 auto;
+}
+
+canvas {
+  color:$white;
+  border: $white dashed 2px;
+  padding:15px;
+}
+
+#alphabet {
+  @include clear;
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background:$white;
+  color:$base-color;
+  cursor:pointer;
+  @include corners(5px);
+  border: solid 1px $white;
+}
+
+#alphabet li:hover {
+  color: #00b3b4;
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
+}
+
+.active {
+  @include opacity;
+  cursor:default;
+
+  &:hover{
+      @include fade;
+      @include opacity;
+    }
+}
+
+#mylives{
+  font-size:1.6em;
+  text-align:center;
+  display:block;
+}
+
+#clue {
+  font-size: 45px;
+}
+
+@media (max-width: 767px) {
+  #alphabet {
+  padding:0 0 0 15px;
+}
+  }
+
+  @media (max-width: 480px) {
+  #alphabet {
+  padding:0 0 0 25px;
+}
+  }
+
+  .escape-door {
+    background-image: url('../img/escape.jpg');
+    height: 100%;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    background-size: cover;
+    vertical-align: bottom;
+    font-size: 30px;
+    text-align: center;
+    padding: 25%;
+    font-size: 75px;
+  }
+
+  .escape-door p {
+    font-family: 10em;
+  }
+
+  .escape-door p:hover {
+    color: #00b3b4;
+  }
+
+  .hide{
+    display: none;
+  }
+
+
+  /* //github icon and footer// */
+  #end {
+  font-size: 12px;
+  text-align: center;
+}
+
+  .icons {
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 35px;
+  padding: 3em;
+  }
+
+  .icons a {
+  color: #00b3b4;
+  }
+
+  #final{
+      width: 700px;
+      padding: 5%;
+      border-radius: 15em;
+      display: inline-block;
+  }
