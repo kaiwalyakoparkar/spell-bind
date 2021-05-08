@@ -12,7 +12,7 @@
     height: 100%;
     width: 100%;
     position:fixed;
-    background:radial-gradient(circle 16vmax at var(--X) var(--Y),
+    background:radial-gradient(circle 400px at var(--X) var(--Y),
     rgba(0,0,0,0) 0%,
     rgba(0,0,0,0.5) 90%,
     rgba(0,0,0,0.95) 100%
@@ -55,4 +55,31 @@ img{
     background-color: rgb(146, 13, 146);
     box-shadow: 0px 5px #666;
     transform: translateY(4px);
+}
+
+@media screen and (max-width: 480px) {
+
+    body{
+        margin: 0;
+        background-color: black;
+        height: 100vh;
+        background-position: center ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./../assets/bg-2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .btn{
+        box-shadow:0px 9px #999;
+        font-family: var(--font-two);
+        font-size: 10vw;
+        background-color: purple;
+        font-weight: 700;
+        border-radius: 15px;
+        color: rgb(231, 149, 17);
+        margin-top: 80vw;
+    }
 }
