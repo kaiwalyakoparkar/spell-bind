@@ -1,0 +1,70 @@
+body {
+    text-align: center;
+    margin: auto;
+    width: 960px;
+    background-image: url(../img/room.jpg);
+    background-position: center;
+    background-size: 150%;
+    color: white;
+    height:420px;
+    background: cover;
+
+}
+
+img {
+    margin:auto;
+    text-align: center;
+    z-index: -10;
+    position: absolute;
+    opacity: 0.1;
+    top: 30%;
+   left: 40%; 
+   /* box-shadow: 0px 0px 15px rgb(255, 254, 254); */
+
+}
+
+#answer {
+    font-family: 'Girassol', cursive;
+    font-size: 3em;
+    color: white;
+    margin: 2%
+    
+}
+
+#question {
+    margin: 60px auto;
+    width: 100%;
+    font-size: 4em;
+    font-family: 'Girassol', cursive;
+    -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+    text-shadow: 0px 0px 15px rgb(255, 254, 254);
+}
+
+
+
+button:hover {
+  box-shadow: 0 0 20px rgb(250, 13, 13);
+  background-color: black;
+  color: rgb(240, 214, 214);
+  transition-duration: 0.4s;
+}
+
+button {
+    padding: 5px;
+    font-size: 2.5em;
+    font-family: 'Creepster', cursive;
+    margin: 2%;
+    background-color: black;
+    color: black;
+    border-color:rgb(250, 13, 13) ;
+    background-color: rgb(250, 13, 13);
+    border-radius: 40% 60% 90% 100%;
+    outline: none;
+}
+
+#nextPage {
+    width: 20%;
+    text-align: center;
+    margin-left: 25%;
+
+}
