@@ -11,12 +11,12 @@
   display: block;
   height: 100%;
   width: 100%;
-  position:fixed;
+  /* position:fixed;
   background:radial-gradient(circle 16vmax at var(--X) var(--Y),
   rgba(0,0,0,0) 0%,
   rgba(0,0,0,0.5) 90%,
   rgba(0,0,0,0.95) 100%
-  );
+  ); */
   pointer-events: none;
 }
 
@@ -362,12 +362,12 @@ button:focus {
 }
 
 /* Variabes */
-$orange: #ffa600;
+/* $orange: #ffa600;
 $green: #c1d72e;
 $blue: #82d2e5;
 $grey:#f3f3f3;
 $white: #fff;
-$base-color:$green ;
+$base-color:$green ; */
 
 /* Mixin's */
 
