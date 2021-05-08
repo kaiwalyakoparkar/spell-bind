@@ -29,24 +29,24 @@ var gameScreen;
 
 //howler sounds
 var bgmusic = new Howl({
-  src: ['../assets/audio/bgmusic.mp3'],
+  src: ['./assets/audio/bgmusic.mp3'],
   loop: true
 });
 var fireSound = new Howl({
-  src: ['../assets/audio/fire.mp3']
+  src: ['./assets/audio/fire.mp3']
 });
 fireSound.volume(.3);
 var clickSound = new Howl({
-  src: ['../assets/audio/click.mp3']
+  src: ['./assets/audio/click.mp3']
 });
 var explosionSound = new Howl({
-  src: ['../assets/audio/explosion.mp3']
+  src: ['./assets/audio/explosion.mp3']
 });
 var collectSound = new Howl({
-  src: ['../assets/audio/collect.mp3']
+  src: ['./assets/audio/collect.mp3']
 });
 var enemyhitSound = new Howl({
-  src: ['../assets/audio/enemyhit.mp3']
+  src: ['./assets/audio/enemyhit.mp3']
 });
 enemyhitSound.volume(.5);
 
@@ -156,29 +156,29 @@ var GameImageAnimated = function(imagefile, divider){
 	}
 }
 
-var btnUp = new GameImageAnimated("../assets/images/btn-up.png", 2);
-var btnDown = new GameImageAnimated("../assets/images/btn-down.png", 2);
-var btnLeft = new GameImageAnimated("../assets/images/btn-left.png", 2);
-var btnRight = new GameImageAnimated("../assets/images/btn-right.png", 2);
-var btnFire = new GameImageAnimated("../assets/images/wand.png", 2);
+var btnUp = new GameImageAnimated("./assets/images/btn-up.png", 2);
+var btnDown = new GameImageAnimated("./assets/images/btn-down.png", 2);
+var btnLeft = new GameImageAnimated("./assets/images/btn-left.png", 2);
+var btnRight = new GameImageAnimated("./assets/images/btn-right.png", 2);
+var btnFire = new GameImageAnimated("./assets/images/wand.png", 2);
 
-var bullet = new GameImageAnimated("../assets/images/jpBullet.png", 4);
-var bulletMetal = new GameImageAnimated("../assets/images/jpBulletMetal.png", 1);
-var bulletMG = new GameImageAnimated("../assets/images/jpBulletMG.png", 1);
+var bullet = new GameImageAnimated("./assets/images/jpBullet.png", 4);
+var bulletMetal = new GameImageAnimated("./assets/images/jpBulletMetal.png", 1);
+var bulletMG = new GameImageAnimated("./assets/images/jpBulletMG.png", 1);
 
-var jetpacker = new GameImageAnimated("../assets/images/wizard.png", 9);
-var weaponUps = new GameImageAnimated("../assets/images/weaponUps.png", 5);
-var explosion = new GameImageAnimated("../assets/images/explosion.png", 5);
+var jetpacker = new GameImageAnimated("./assets/images/wizard.png", 9);
+var weaponUps = new GameImageAnimated("./assets/images/weaponUps.png", 5);
+var explosion = new GameImageAnimated("./assets/images/explosion.png", 5);
 
-var simpleEnemy = new GameImageAnimated("../assets/images/bat.png", 1);
-var simpleEnemy2 = new GameImageAnimated("../assets/images/ghost.png", 1);
-var enemyBullets = new GameImageAnimated("../assets/images/enemyBullets.png", 1);
+var simpleEnemy = new GameImageAnimated("./assets/images/bat.png", 1);
+var simpleEnemy2 = new GameImageAnimated("./assets/images/ghost.png", 1);
+var enemyBullets = new GameImageAnimated("./assets/images/enemyBullets.png", 1);
 
-var textButtons = new GameImageAnimated("../assets/images/textButtons.png", 3);
-var titleImage = new GameImageAnimated("../assets/images/title.png", 1);
+var textButtons = new GameImageAnimated("./assets/images/textButtons.png", 3);
+var titleImage = new GameImageAnimated("./assets/images/title.png", 1);
 
-var floor = new GameImageAnimated("../assets/images/floor.png", 1);
-var bg = new GameImageAnimated("../assets/images/back2.png", 1);
+var floor = new GameImageAnimated("./assets/images/floor.png", 1);
+var bg = new GameImageAnimated("./assets/images/back2.png", 1);
 
 var firingAllowed = true;
 
@@ -211,7 +211,7 @@ var enemies2_bullets;
 var enemies2_firing_interval; 
 
 //load logo and start the game after it
-var zklogo = new GameImageSimple("../assets/images/spellbind.jpg");
+var zklogo = new GameImageSimple("./assets/images/spellbind.jpg");
 zklogo.image.onload = function(){
 	startScene("start");
 }
