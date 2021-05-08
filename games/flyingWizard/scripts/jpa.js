@@ -935,3 +935,111 @@ function generateFloor(){
 		}
 	}
 }
+
+var gameBg = [];
+var multiBg = 1048;
+function generateBg(){
+	if(gameBg.length == 0){
+		gameBg.push({"posX" : 524, "posY" : gameHeight - 250});
+		if(multiBg < gameWidth*2){
+			while(multiBg < gameWidth*2){
+				gameBg.push({"posX" : 524 + multiBg, "posY" : gameHeight - 250});
+				multiBg += 1048;
+			}
+		}
+	}
+	if(gameBg.length > 0){
+		for(var i = 0; i < gameBg.length; i++){
+			gameBg[i].posX -= .65;
+			bg.draw("still", gameBg[i].posX, gameBg[i].posY, 1, 0, 0, 0);
+			if(gameBg[i].posX + 524 < 0){
+				var lastBgX = gameBg[gameBg.length-1].posX;
+				gameBg.splice(i, 1);
+				i -= 1;
+				gameBg.push({"posX" : 1048 + lastBgX, "posY" : gameHeight - 250});
+			}
+		}
+	}
+}
+
+function updateLevel(){
+	ctx.textAlign = "right";
+	ctx.fillText("Score: " + playerCurrentScore, gameWidth-20, 20);
+	ctx.font = "bold 10px Arial";
+	ctx.fillText("High Score: " + playerHighScore, gameWidth-20, 40);
+	ctx.font = "bold 18px Arial";
+	if(playerCurrentScore > playerHighScore){
+		playerHighScore = playerCurrentScore;
+		localStorage.setItem(title+"HighScore", playerHighScore);
+	}
+	if(gamePlayCounter < gamePlayCounterLimit) gamePlayCounter++;
+	else{
+		gamePlayCounter = 0;
+		if(enemies1_aprnce_interval > 0) enemies1_aprnce_interval -= enemies1_aprnce_interval*.05;
+		if(enemies2_aprnce_interval > 0) enemies2_aprnce_interval -= enemies2_aprnce_interval*.05;
+	}
+}
+
+function updateShootingLine(){
+	ctx.fillStyle = "red";
+	ctx.fillRect(jetPacker.posX, jetPacker.posY+2, gameWidth - jetPacker.posX, .25);
+	ctx.fillStyle = "black";
+}
+
+function reset(){
+	jetPacker = {
+		"posX" : gameWidth/2,
+		"posY" : gameHeight/2,
+		"moveX" : 0,
+		"moveY" : 0,
+		"gravity" : 0,
+		"direction" : "",
+		"bullets" : [],
+		"weaponType" : "basic",
+		"firingInterval" : 200,
+		"ammo" : 0,
+		"initHealth" : 20,
+		"health" : 20
+	}
+	
+	playerLevel = 1;
+	playerCurrentScore = 0;
+	gamePlayCounter = 0;
+	gamePlayCounterLimit = 750;
+
+	weaponUpTimeLimit = 512;
+	tempWeaponUpCounter = 0;
+	
+	weaponUp = [];
+	enemies1 = [];
+
+	enemies1_aprnce_interval = 420;
+	enemies1_counter = 0;
+	enemies1_bullets = [];
+	enemies1_firing_interval = 400; 
+
+	enemies2 = [];
+	enemies2_aprnce_interval = 546;
+	enemies2_counter = 0;
+	enemies2_bullets = [];
+	enemies2_firing_interval = 250; 
+}
+
+
+function pause(){
+	if(gameScreen == "adventure"){
+		bgmusic.pause();
+		stop();
+		ctx.textAlign = "center";
+		ctx.fillText("Paused", gameWidth/2, gameHeight/2);
+		ctx.textAlign = "left";
+		textButtons.draw("still", gameWidth/2, gameHeight/2 + 100, 2, 0, 0, 0);
+	}
+}
+
+function resume(){
+	if(gameScreen == "adventure"){
+		bgmusic.play();
+		loopDGame();
+	}
+}
