@@ -179,3 +179,110 @@ var titleImage = new GameImageAnimated("../assets/images/title.png", 1);
 
 var floor = new GameImageAnimated("../assets/images/floor.png", 1);
 var bg = new GameImageAnimated("../assets/images/back2.png", 1);
+
+var firingAllowed = true;
+
+var jetPacker;
+
+var playerLevel;
+var playerHighScore;
+if(localStorage.getItem(title+"HighScore") === null){
+	localStorage.setItem(title+"HighScore", 0);
+}
+playerHighScore = localStorage.getItem(title+"HighScore");
+var playerCurrentScore;
+var gamePlayCounter;
+var gamePlayCounterLimit;
+
+var weaponUpTimeLimit;
+var tempWeaponUpCounter;
+var weaponUp;
+
+var enemies1;
+var enemies1_aprnce_interval;
+var enemies1_counter;
+var enemies1_bullets;
+var enemies1_firing_interval; 
+
+var enemies2;
+var enemies2_aprnce_interval;
+var enemies2_counter;
+var enemies2_bullets;
+var enemies2_firing_interval; 
+
+//load logo and start the game after it
+var zklogo = new GameImageSimple("../assets/images/spellbind.jpg");
+zklogo.image.onload = function(){
+	startScene("start");
+}
+
+function startScene(x){
+	switch (x) {
+		case "start" :
+			$("#blackScreen").fadeIn(500, function(){
+				gameScreen = "start";
+				zklogo.draw(gameWidth/2, gameHeight/2, 0, 0);
+				var tempInterv = setTimeout(function(){
+					clearInterval(tempInterv);
+					startScene("mainmenu");
+				}, 2000);
+			});
+			$("#blackScreen").fadeOut(500);
+			break;
+		case "gameover" :
+			stop();
+			$("#blackScreen").fadeIn(500, function(){	
+				gameScreen = "gameover";
+				ctx.clearRect(0, 0, gameWidth, gameHeight);
+				ctx.fillStyle = "#cfecff";
+				ctx.fillRect(0, 0, gameWidth, gameHeight);
+				ctx.fillStyle = "black";
+				ctx.textAlign = "center";
+				textButtons.draw("still", gameWidth/2, gameHeight/2 + 50, 3, 0, 0, 0);
+				titleImage.draw("still", gameWidth/2, gameHeight/2 - 50, 1, 0, 0, 0);
+			});
+			$("#blackScreen").fadeOut(500);
+			break;
+		case "mainmenu" :
+			stop();
+			$("#blackScreen").fadeIn(500, function(){	
+				gameScreen = "gameover";
+				ctx.clearRect(0, 0, gameWidth, gameHeight);
+				ctx.fillStyle = "#cfecff";
+				ctx.fillRect(0, 0, gameWidth, gameHeight);
+				ctx.fillStyle = "black";
+				ctx.textAlign = "center";
+				textButtons.draw("still", gameWidth/2, gameHeight/2 + 50, 1, 0, 0, 0);
+				titleImage.draw("still", gameWidth/2, gameHeight/2 - 50, 1, 0, 0, 0);
+			});
+			$("#blackScreen").fadeOut(500);
+			break;
+		case "adventure" :
+			$("#blackScreen").fadeIn(500, function(){
+				bgmusic.play();
+				reset();
+				gameScreen = "adventure";
+				loopDGame();
+			});
+			$("#blackScreen").fadeOut(500);
+			break;
+	}
+}
+
+function loopDGame() {
+	
+	myAnimation = requestAnimationFrame(loopDGame);
+	
+	now = Date.now();
+    delta = now - then;
+     
+    if (delta > interval) {
+		then = now - (delta % interval);
+		//update codes here
+		update();
+	}
+}
+
+function stop(){
+	cancelAnimationFrame(myAnimation);
+}
