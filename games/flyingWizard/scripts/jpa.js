@@ -286,3 +286,212 @@ function loopDGame() {
 function stop(){
 	cancelAnimationFrame(myAnimation);
 }
+
+function update(){	
+	ctx.clearRect(0, 0, gameWidth, gameHeight);
+	ctx.fillStyle = "#cfecff";
+	ctx.fillRect(0, 0, gameWidth, gameHeight);
+	ctx.fillStyle = "black";
+	
+	generateBg();
+	generateFloor();
+	generateWeaponUp();
+	generateEnemies1();
+	generateEnemies2();
+	moveJetPacker();
+	showWeaponStatus();
+	
+	updateLevel();
+	
+	if(upPressed) btnUp.draw("still", 200, gameHeight - 250, 2, 0, 0, 0);
+	else btnUp.draw("still", 200, gameHeight - 250, 1, 0, 0, 0);
+	if(downPressed) btnDown.draw("still", 200, gameHeight - 100, 2, 0, 0, 0);
+	else btnDown.draw("still", 200, gameHeight - 100, 1, 0, 0, 0);
+	if(rightPressed) btnRight.draw("still", 325, gameHeight - 175, 2, 0, 0, 0);
+	else btnRight.draw("still", 325, gameHeight - 175, 1, 0, 0, 0);
+	if(leftPressed) btnLeft.draw("still", 75, gameHeight - 175, 2, 0, 0, 0);
+	else btnLeft.draw("still", 75, gameHeight - 175, 1, 0, 0, 0);
+	if(firePressed) btnFire.draw("still", gameWidth - 100, gameHeight - 100, 2, 0, 0, 0);
+	else btnFire.draw("still", gameWidth - 100, gameHeight - 100, 1, 0, 0, 0);
+}
+
+$(document).keydown(function(e){
+	if (e.keyCode == 37) { 
+		leftPressed = true;
+		return false;
+	}
+	if (e.keyCode == 38) { 
+		upPressed = true;
+		return false;
+	}
+	if (e.keyCode == 39) { 
+		rightPressed = true;
+		return false;
+	}
+	if (e.keyCode == 40) { 
+		downPressed = true;
+		return false;
+	}
+	if (e.keyCode == 32) { 
+		firePressed = true;
+		return false;
+	}
+});
+
+$(document).keyup(function(e){
+	if (e.keyCode == 37) { 
+		leftPressed = false;
+		return false;
+	}
+	if (e.keyCode == 38) { 
+		upPressed = false;
+		return false;
+	}
+	if (e.keyCode == 39) { 
+		rightPressed = false;
+		return false;
+	}
+	if (e.keyCode == 40) { 
+		downPressed = false;
+		return false;
+	}
+	if (e.keyCode == 32) { 
+		firePressed = false;
+		return false;
+	}
+});
+
+document.getElementById("gameCanvas").addEventListener('mousedown', function(e){
+	var cursorX = e.clientX/gWidthRatio;
+	var cursorY = e.clientY/gHeightRatio;
+	if(gameScreen == "mainmenu") if(checkClick(cursorX, cursorY, textButtons)){
+		clickSound.play();
+		startScene("adventure");
+	}
+	if(gameScreen == "adventure") if(checkClick(cursorX, cursorY, textButtons)){
+		clickSound.play();
+		resume();
+	}
+	if(gameScreen == "gameover") if(checkClick(cursorX, cursorY, textButtons)){
+		clickSound.play();
+		startScene("adventure");
+	}
+}, false);
+
+document.getElementById("gameCanvas").addEventListener('touchstart', function(e){
+	var userTouches = e.changedTouches;
+	for(var j = 0; j < userTouches.length; j++){
+		switch (gameScreen){
+			case "adventure" :
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnUp)) upPressed = true;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnDown)) downPressed = true;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnLeft)) leftPressed = true;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnRight)) rightPressed = true;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnFire)) firePressed = true;
+				break;
+		}
+	}	
+}, false);
+
+document.getElementById("gameCanvas").addEventListener('touchend', function(e){
+	var userTouches = e.changedTouches;
+	for(var j = 0; j < userTouches.length; j++){
+		switch (gameScreen){
+			case "adventure" :
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnUp)) upPressed = false;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnDown)) downPressed = false;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnLeft)) leftPressed = false;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnRight)) rightPressed = false;
+				if(checkClick(userTouches[j].pageX/gWidthRatio, userTouches[j].pageY/gHeightRatio, btnFire)) firePressed = false;
+				break;
+		}
+	}
+	if(e.touches.length == 0){
+		leftPressed = false;
+		upPressed = false;
+		rightPressed = false;
+		firePressed = false;
+	}
+}, false);
+
+//click collision detection
+function checkClick(x, y, clickable){
+	if(x > clickable.cor1 && y > clickable.cor2 && x < clickable.cor3 && y < clickable.cor4){
+		return true;
+	}
+	return false;
+}
+
+//image to image collision detection
+function checkClick2(firstImage, secondImage){
+	var fi = [];
+	fi[0] = {"x" : firstImage.cor1, "y" : firstImage.cor2};
+	fi[1] = {"x" : firstImage.cor1, "y" : firstImage.cor4};
+	fi[2] = {"x" : firstImage.cor2, "y" : firstImage.cor2};
+	fi[3] = {"x" : firstImage.cor2, "y" : firstImage.cor4};
+	for(var i = 0; i < 4; i++){
+		if(checkClick(fi[i].x, fi[i].y, secondImage)) return true; 
+	}
+	return false;
+}
+
+//check bullet collision
+function checkBulletHit(bullet, bulletIndex){
+		if(enemies1_bullets.length > 0){
+			if(bullet == enemies1_bullets){
+				for(var eb = 0; eb < enemies1_bullets.length; eb++){
+					if(checkClick(bullet[eb].posX, bullet[eb].posY, jetpacker)){
+						enemies1_bullets.splice(eb, 1);
+						eb -= 1;
+						return true;
+					}
+				}
+			}
+		}
+		if(enemies2_bullets.length > 0){
+			if(bullet == enemies2_bullets){
+				for(var eb = 0; eb < enemies2_bullets.length; eb++){
+					if(checkClick(bullet[eb].posX, bullet[eb].posY, jetpacker)){
+						enemies2_bullets.splice(eb, 1);
+						eb -= 1;
+						return true;
+					}
+				}
+			}
+		}
+		if(enemies1.length > 0 || enemies2.length > 0){
+			if(bullet == jetPacker.bullets){			
+				for(var enm = 0; enm < enemies1.length; enm++){
+					if(bullet[bulletIndex].posX > enemies1[enm].posX - enemies1[enm].disFromCenter && bullet[bulletIndex].posY > enemies1[enm].posY - enemies1[enm].disFromCenter && bullet[bulletIndex].posX < enemies1[enm].posX + enemies1[enm].disFromCenter && bullet[bulletIndex].posY < enemies1[enm].posY + enemies1[enm].disFromCenter){
+						enemies1[enm].health -= bullet[bulletIndex].damagePw;
+						explosion.draw("still", bullet[bulletIndex].posX, bullet[bulletIndex].posY, 1, 0, 0, 0);
+						if(enemies1[enm].health < 1){
+							explosion.draw("still", enemies1[enm].posX, enemies1[enm].posY, 2, 0, 0, 0);
+							explosion.draw("still", enemies1[enm].posX, enemies1[enm].posY, 3, 0, 0, 0);
+							playerCurrentScore += 100;
+							enemies1.splice(enm, 1);
+							enm -= 1;
+							explosionSound.play();
+						}
+						return true;
+					}
+				}
+				for(var enm = 0; enm < enemies2.length; enm++){
+					if(bullet[bulletIndex].posX > enemies2[enm].posX - enemies2[enm].disFromCenter && bullet[bulletIndex].posY > enemies2[enm].posY - enemies2[enm].disFromCenter && bullet[bulletIndex].posX < enemies2[enm].posX + enemies2[enm].disFromCenter && bullet[bulletIndex].posY < enemies2[enm].posY + enemies2[enm].disFromCenter){
+						enemies2[enm].health -= bullet[bulletIndex].damagePw;
+						explosion.draw("still", bullet[bulletIndex].posX, bullet[bulletIndex].posY, 1, 0, 0, 0);
+						if(enemies2[enm].health < 1){
+							explosion.draw("still", enemies2[enm].posX, enemies2[enm].posY, 2, 0, 0, 0);
+							explosion.draw("still", enemies2[enm].posX, enemies2[enm].posY, 3, 0, 0, 0);
+							playerCurrentScore += 300;
+							enemies2.splice(enm, 1);
+							enm -= 1;
+							explosionSound.play();
+						}
+						return true;
+					}
+				}
+			}
+		}
+	return false;
+};
