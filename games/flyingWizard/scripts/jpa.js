@@ -27,7 +27,28 @@ ctx.textBaseline="middle";
 
 var gameScreen;
 
-
+/howler sounds
+var bgmusic = new Howl({
+  src: ['../assets/audio/bgmusic.mp3'],
+  loop: true
+});
+var fireSound = new Howl({
+  src: ['../assets/audio/fire.mp3']
+});
+fireSound.volume(.3);
+var clickSound = new Howl({
+  src: ['../assets/audio/click.mp3']
+});
+var explosionSound = new Howl({
+  src: ['../assets/audio/explosion.mp3']
+});
+var collectSound = new Howl({
+  src: ['../assets/audio/collect.mp3']
+});
+var enemyhitSound = new Howl({
+  src: ['../assets/audio/enemyhit.mp3']
+});
+enemyhitSound.volume(.5);
 
 
 
