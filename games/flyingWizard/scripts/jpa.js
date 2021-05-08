@@ -495,3 +495,172 @@ function checkBulletHit(bullet, bulletIndex){
 		}
 	return false;
 };
+
+function moveJetPacker(){
+	updateShootingLine();
+	var minSpeed = .01;
+	var maxSpeed = 6;
+	var multiplier = 1.35;
+	drawPlayerHealthStatus();
+	if(jetPacker.health <= 0){
+		startScene("gameover");
+		return;
+	}
+	if(upPressed){
+		if(jetPacker.moveY < maxSpeed){
+			if(jetPacker.moveY <= 0) jetPacker.moveY = minSpeed;
+			jetPacker.moveY *= multiplier;
+		}
+		if(jetpacker.cor2 > 0) jetPacker.posY -= jetPacker.moveY;
+	}else if(!upPressed){
+		if(jetPacker.moveY > minSpeed){
+			jetPacker.moveY /= multiplier;
+			if(jetpacker.cor2 > 0) jetPacker.posY -= jetPacker.moveY;
+		} 
+	}
+	if(leftPressed){		
+		if(jetPacker.direction == "" || jetPacker.direction == "left" && jetPacker.direction != "onfoot"){
+			if(jetPacker.moveX < maxSpeed){
+				jetPacker.direction = "left";
+				if(jetPacker.moveX <= 0) jetPacker.moveX = minSpeed;
+				jetPacker.moveX *= multiplier;
+			}else if(jetPacker.moveX >= maxSpeed) jetPacker.moveX /= multiplier;
+			if(jetpacker.cor1 > 0) jetPacker.posX -= jetPacker.moveX;
+			if(jetpacker.cor2 > 0) jetPacker.posY -= jetPacker.moveX/2;
+		}
+	}else if(!leftPressed){
+		if(jetPacker.moveX > minSpeed && jetPacker.direction == "left"){
+			jetPacker.moveX /= multiplier;
+			if(jetpacker.cor1 > 0) jetPacker.posX -= jetPacker.moveX;
+		}
+	}
+	if(rightPressed){
+		if(jetPacker.direction == "" || jetPacker.direction == "right" && jetPacker.direction != "onfoot"){
+			if(jetPacker.moveX < maxSpeed){
+				jetPacker.direction = "right";
+				if(jetPacker.moveX <= 0) jetPacker.moveX = minSpeed;
+				jetPacker.moveX *= multiplier;
+			}else if(jetPacker.moveX >= maxSpeed) jetPacker.moveX /= multiplier;
+			if(jetpacker.cor3 < gameWidth) jetPacker.posX += jetPacker.moveX;
+			if(jetpacker.cor2 > 0) jetPacker.posY -= jetPacker.moveX/2;
+		} 
+	}else if(!rightPressed){
+		if(jetPacker.moveX > minSpeed && jetPacker.direction == "right"){
+			jetPacker.moveX /= multiplier;
+			if(jetpacker.cor3 < gameWidth) jetPacker.posX += jetPacker.moveX;
+		}
+	}
+	
+	//gravity
+	if(jetpacker.cor4 < gameHeight - 50){
+		if(downPressed) jetpacker.draw("still", jetPacker.posX, jetPacker.posY, 1, 0, 0, 0);
+		else{
+			if(jetPacker.gravity < maxSpeed/3){
+				if(jetPacker.gravity == 0) jetPacker.gravity = .01;
+				jetPacker.gravity *= multiplier;
+			}
+			jetPacker.posY += jetPacker.gravity;
+			if(jetPacker.moveX <= .5) jetPacker.direction = "";
+			jetpacker.draw("anim", jetPacker.posX, jetPacker.posY, 2, 4, 12, 0);
+		}
+	}else{
+		jetPacker.gravity = 0;
+		jetpacker.draw("anim", jetPacker.posX, jetPacker.posY, 5, 9, 12, 0);
+	}
+	
+	//go down(faster gravity)
+	if(downPressed){
+		if(jetpacker.cor4 < gameHeight - 50){
+			jetPacker.posY += 4;
+		} else jetPacker.direction = "";
+	}
+	
+	//wind
+	if(jetPacker.gravity != 0 && jetpacker.cor1 > 0) jetPacker.posX -= .25;	
+	
+	//fire
+	if(firePressed){
+		if(firingAllowed){
+			fireSound.play();
+			var randomY = Math.random() * 10;
+			switch (jetPacker.weaponType){
+				case "basic" :
+					jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY, "bulletType" : "basic", "bulletSpeed" : 15, "damagePw" : 1, "yMove" : 0});
+					break;
+				case "metal" :
+					if(jetPacker.ammo > 0){
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY, "bulletType" : "metal", "bulletSpeed" : 19, "damagePw" : 5, "yMove" : 0});
+						jetPacker.ammo -= 1;
+					} else if(jetPacker.ammo <= 0) jetPacker.weaponType = "basic";
+					break;
+				case "tripleBasic" :
+					if(jetPacker.ammo > 0){
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY + 10, "bulletType" : "tripleBasic", "bulletSpeed" : 25, "damagePw" : 1, "yMove" : 1});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY, "bulletType" : "tripleBasic", "bulletSpeed" : 25, "damagePw" : 1, "yMove" : 0});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY - 10, "bulletType" : "tripleBasic", "bulletSpeed" : 25, "damagePw" : 1, "yMove" : -1});
+						jetPacker.ammo -= 3;
+					} else if(jetPacker.ammo <= 0) jetPacker.weaponType = "basic";
+					break;
+				case "MG" :
+					if(jetPacker.ammo > 0){
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY - 40, "bulletType" : "MG", "bulletSpeed" : 21, "damagePw" : 1, "yMove" : .30});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY + 40, "bulletType" : "MG", "bulletSpeed" : 21, "damagePw" : 1, "yMove" : -.30});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 20, "posY" : jetPacker.posY + randomY + 20, "bulletType" : "MG", "bulletSpeed" : 21, "damagePw" : 1, "yMove" : -.15});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 20, "posY" : jetPacker.posY + randomY - 20, "bulletType" : "MG", "bulletSpeed" : 21, "damagePw" : 1, "yMove" : .15});
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 30, "posY" : jetPacker.posY + randomY, "bulletType" : "MG", "bulletSpeed" : 21, "damagePw" : 1, "yMove" : -.0});
+						jetPacker.ammo -= 5;
+					} else if(jetPacker.ammo <= 0) jetPacker.weaponType = "basic";
+					break;
+				default :
+					if(jetPacker.ammo > 0){
+						jetPacker.bullets.push({"posX" : jetPacker.posX + 10, "posY" : jetPacker.posY + randomY, "bulletType" : "basic", "bulletSpeed" : 15, "damagePw" : 1, "yMove" : 0});
+						jetPacker.ammo -= 1;
+					} else if(jetPacker.ammo <= 0) jetPacker.weaponType = "basic";
+					break;
+			}
+			firingAllowed = false;
+			setTimeout(function(){firingAllowed = true;}, jetPacker.firingInterval);
+		}
+		
+	}
+	
+	//updating jetpacker bullets
+	if(jetPacker.bullets.length > 0){
+		for(var i = 0; i < jetPacker.bullets.length; i ++){
+			if(jetPacker.bullets[i].posX > gameWidth + 100){
+				jetPacker.bullets.splice(i, 1);
+				i -= 1;
+			}else{
+				switch(jetPacker.bullets[i].bulletType){
+					case "basic" :
+						jetPacker.bullets[i].posX += jetPacker.bullets[i].bulletSpeed;
+						bullet.draw("anim", jetPacker.bullets[i].posX + jetPacker.bullets[i].bulletSpeed, jetPacker.bullets[i].posY, 1, 4, 20, 0);
+						break;
+					case "metal" :
+						jetPacker.bullets[i].posX += jetPacker.bullets[i].bulletSpeed;
+						bulletMetal.draw("still", jetPacker.bullets[i].posX + jetPacker.bullets[i].bulletSpeed, jetPacker.bullets[i].posY, 1, 0, 0, 0);
+						break;
+					case "tripleBasic" :
+						jetPacker.bullets[i].posX += jetPacker.bullets[i].bulletSpeed;
+						jetPacker.bullets[i].posY += jetPacker.bullets[i].yMove;
+						bullet.draw("anim", jetPacker.bullets[i].posX + jetPacker.bullets[i].bulletSpeed, jetPacker.bullets[i].posY - 6, 1, 4, 20, 0);
+						break;
+					case "MG" :
+						jetPacker.bullets[i].posX += jetPacker.bullets[i].bulletSpeed;
+						jetPacker.bullets[i].posY -= jetPacker.bullets[i].yMove;
+						bulletMG.draw("still", jetPacker.bullets[i].posX + jetPacker.bullets[i].bulletSpeed, jetPacker.bullets[i].posY, 1, 0, 0, 0);
+						break;
+					default :
+						jetPacker.bullets[i].posX += jetPacker.bullets[i].bulletSpeed;
+						bullet.draw("anim", jetPacker.bullets[i].posX + jetPacker.bullets[i].bulletSpeed, jetPacker.bullets[i].posY, 1, 4, 20, 0);
+						break;
+				}
+				if(checkBulletHit(jetPacker.bullets, i)){
+					enemyhitSound.play();
+					jetPacker.bullets.splice(i, 1);
+					i -= 1;
+				}
+			}
+		}
+	}
+}
