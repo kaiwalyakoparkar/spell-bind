@@ -28,27 +28,27 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("./../assets/bg-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 img{
     height: auto;
     width: 70vw;
 }
 .btn{
     box-shadow:0px 9px #999;
-    padding: 0.2rem 2.5rem;
+    padding: 1.5vw 7vw;
     font-family: var(--font-two);
-    font-size: 1.75rem;
+    font-size: 5vw;
     background-color: purple;
     font-weight: 700;
     border-radius: 15px;
+    max-height:12vw;
     color: rgb(231, 149, 17);
+    margin-top: 30vw;
+
 }
 .btn:active {
     transform: 2ms;
