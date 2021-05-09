@@ -4,7 +4,7 @@
 
 <p align="center">
     ✨ Welcome to Spell Bind ✨ <br />
-    This game embarks the fun and excitment amongst the user. This games helps you think in all the possible aspects to solve the problem
+    This game embarks the fun and excitment amongst the user. This games helps you think in all the possible aspects to solve the problem in the fun way.
 </p>
 <br />
 
@@ -13,12 +13,12 @@
 
 Thank you very much for considering this project. Make sure you read [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTING.md) before making contributions. Feel free to raise an issue and after gettting assigned to it, you are all set to work on it.
 ## 📌 About the project :
-This project was intentionally built for the MLH's `AbracadabraHack` Hackathon. This project is made for having fun with the help of a nice magician's story. This project is
+This project was intentionally built for the MLH's `AbracadabraHack` Hackathon. This project is made for having fun with the help of a nice magician's story and different levels which has a certain difficuly level.
 
 ## 📌 Story of the project :
-The story of the project is pretty interesting. There's an anonymous hacker out there and his next target is you 😱. He performs his tasks (attacks) on you and you are with three options. If you choose the correct one then you can make the hacker loose points 🙌 . Othervise you end up being a victim.
+The story of the project is pretty interesting. You are a famous magician in the world of spells. Your rivals somehow manage to kidnap you and put into a room which is closed from all the sides. The interesting part is you are not able to use your magics to get out of it. Now you have to think logically and escape the rooms. At last you will fight with the rivals with all the powers and spells ad if you win you protect your legacy.
 
-## 📌 Demo Images :
+<!-- ## 📌 Demo Images : -->
 
 <!-- ## 🚩 Landing Page :
 <div class="row">
