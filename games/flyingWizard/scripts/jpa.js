@@ -469,6 +469,9 @@ function checkBulletHit(bullet, bulletIndex){
 							explosion.draw("still", enemies1[enm].posX, enemies1[enm].posY, 2, 0, 0, 0);
 							explosion.draw("still", enemies1[enm].posX, enemies1[enm].posY, 3, 0, 0, 0);
 							playerCurrentScore += 100;
+							if(playerCurrentScore >= 1500) {
+								window.location.replace("../../../storyline/storyline.html");
+							}
 							enemies1.splice(enm, 1);
 							enm -= 1;
 							explosionSound.play();
@@ -484,6 +487,9 @@ function checkBulletHit(bullet, bulletIndex){
 							explosion.draw("still", enemies2[enm].posX, enemies2[enm].posY, 2, 0, 0, 0);
 							explosion.draw("still", enemies2[enm].posX, enemies2[enm].posY, 3, 0, 0, 0);
 							playerCurrentScore += 300;
+							if(playerCurrentScore >= 1500) {
+								window.location.replace("../../../storyline/storyline.html");
+							}
 							enemies2.splice(enm, 1);
 							enm -= 1;
 							explosionSound.play();
