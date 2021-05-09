@@ -177,8 +177,8 @@ var enemyBullets = new GameImageAnimated("./assets/images/enemyBullets.png", 1);
 var textButtons = new GameImageAnimated("./assets/images/textButtons.png", 3);
 var titleImage = new GameImageAnimated("./assets/images/title.png", 1);
 
-var floor = new GameImageAnimated("./assets/images/floor.png", 1);
-var bg = new GameImageAnimated("./assets/images/back2.png", 1);
+var floor = new GameImageAnimated("./assets/images/path.png", 1);
+var bg = new GameImageAnimated("./assets/images/back.png", 1);
 
 var firingAllowed = true;
 
