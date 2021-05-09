@@ -2,7 +2,7 @@
   <html>
     <head>
       <meta charset="utf-8">
-      <title>Escape Room</title>
+      <title>Trapped</title>
       <link rel="stylesheet" href="css/bootstrap.css">
       <link rel="stylesheet" href="css/animate.css">
       <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
@@ -15,13 +15,13 @@
     <body>
       <div id="intro-photo">
         <div class="item animated flash">
-          <h1>Escape room</h1>
+          <h1>Trapped</h1>
         </div>
         <button onclick="startGame()" id="start-button">Enter</button>
       </div>
       <!-- ROOM ONE -->
       <div class="narrative hide-area" id="narrative-one">
-        <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
+        <p> The sound of a slamming door, you awaken in a magic room you have never been to, all alone.</p>
         <p>Suddenly screeching sounds surrounds you.</p>
         <p>It draws closer and closer to you.</p>
         <span class="continue" onclick="toRoomOne()">Continue...</span>
@@ -46,7 +46,7 @@
         </div>
         <div id="pc-area" class="hide-area">
           <form id="form-wifi">
-            <label for="wifi">Enter Wifi Password</label>
+            <label for="wifi">Enter secret spell</label>
             <input type="text" id="wifi">
           </form>
           <div id="email" class="hide-area">
@@ -56,8 +56,8 @@
       </div>
       <!-- ROOM TWO -->
       <div class="narrative hide-area" id="narrative-two">
-        <p>You unlocked the classroom door with the spare key and head out into the hallway.</p>
-        <p>The building seems to be totally empty, with no sign of whoever made the noises earlier.</p>
+        <p>You unlocked the room door with the spare key and head out into the hallway.</p>
+        <p>The castle seems to be totally empty, with no sign of whoever made the noises earlier.</p>
         <p>With quickened steps, you head straight for the elevators.</p>
         <span class="continue" onclick="toRoomTwo()">Continue...</span>
       </div>
@@ -102,42 +102,6 @@
         <p>You've Made It To The Dungeon. Beat Me, Be Free, Fail and Never Prevail!</p>
         <a class="continue" href="./../escaperoom-level3/index.html">Continue...</a>
       </div>
-
-    <!-- <section class="room-three hide-area">
-      <h2>Your Final Chance</h2>
-      <p>The clock is ticking, solve and survive, fail and forever remain...</p>
-      <button id="start-21" class="hangman-buttons">E</button>
-    </section>
-    <br>
-        <div class="wrapper">
-            <div id="buttons">
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p id="catagoryName"></p>
-            <div id="hold">
-            </div>
-            <p id="mylives"></p>
-            <p id="clue">Hang Loose or Hangman...</p>
-             <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-            <div class="container">
-              <button class="hangman-buttons" id="hint">Hint</button><button id="reset" class="hangman-buttons">Play again</button>
-              <br>
-            </div>
-        </div>
-        <br>
-      </div>
-
-      <div class="hide">
-
-      <div class="item animated flash">
-        <div class="escape-door">
-          <p class="item animated shake"> You're Free! Escape Epicodus Now!</p>
-        </div>
-        </div>
-      </div> -->
 
       <br>
       <div class="hide-area" id="time-expired">
