@@ -16,7 +16,7 @@ Thank you very much for considering this project. Make sure you read [Code of Co
 This project was intentionally built for the MLH's `AbracadabraHack` Hackathon. This project is made for having fun with the help of a nice magician's story and different levels which has a certain difficuly level.
 
 ## 📌 Story of the project :
-The story of the project is pretty interesting. You are a famous magician in the world of spells. Your rivals somehow manage to kidnap you and put into a room which is closed from all the sides. The interesting part is you are not able to use your magics to get out of it. Now you have to think logically and escape the rooms. At last you will fight with the rivals with all the powers and spells ad if you win you protect your legacy.
+The story of the project is pretty interesting. You are a famous magician in the world of spells. Your rivals somehow manage to kidnap you and put into a room which is closed from all the sides. The interesting part is you are not able to use your magics to get out of it. Now you have to think logically and escape the rooms. At last you will fight with the rivals with all the powers and spells and if you win you protect your legacy.
 
 <!-- ## 📌 Demo Images : -->
 
