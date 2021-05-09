@@ -1,5 +1,5 @@
 <h1 align="center">
-    Spell Bind :magic
+   🔮 Spell Bind 🔮
 </h1>
 
 <p align="center">
