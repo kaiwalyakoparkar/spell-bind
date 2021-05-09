@@ -470,7 +470,7 @@ function checkBulletHit(bullet, bulletIndex){
 							explosion.draw("still", enemies1[enm].posX, enemies1[enm].posY, 3, 0, 0, 0);
 							playerCurrentScore += 100;
 							if(playerCurrentScore >= 1500) {
-								window.location.replace("../win.html");
+								window.location.replace("./../win.html");
 							}
 							enemies1.splice(enm, 1);
 							enm -= 1;
