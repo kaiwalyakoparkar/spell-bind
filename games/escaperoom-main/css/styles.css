@@ -1,13 +1,12 @@
-:root{
-  cursor: url("./wand.png"),auto;
-  --X:40vh;
-  --Y:45vw;
-  --font-one:'Architects Daughter', cursive;
-  --font-two: 'Indie Flower', cursive;
-  --font-three: 'Shadows Into Light', cursive;
+:root {
+  --X: 40vh;
+  --Y: 45vw;
+  --font-one: "Architects Daughter", cursive;
+  --font-two: "Indie Flower", cursive;
+  --font-three: "Shadows Into Light", cursive;
 }
-:root::before{
-  content: '';
+:root::before {
+  content: "";
   display: block;
   height: 100%;
   width: 100%;
@@ -20,32 +19,35 @@
   pointer-events: none;
 }
 
-body{
+body {
   margin: 0;
   background-color: black;
-  height: 100vh;
-  background-position: center ;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-img{
-  height: auto;
-  width: 70vw;
+
+.room-one-key img {
+  height: 100vh;
+  width: 100vw;
 }
 
 .hide-area {
   display: none;
 }
 
-.clickable:hover{
+.clickable:hover {
   cursor: pointer;
 }
 
@@ -60,8 +62,8 @@ img{
 }
 
 body {
-  color: #FFF;
-  font-family: "Source Sans Pro",sans-serif;
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
   background-color: black;
 }
 
@@ -71,7 +73,7 @@ h1 {
   padding: 17% 17% 5% 17%;
   font-weight: bolder;
   font-size: 12em;
-  font-weight:200;
+  font-weight: 200;
 }
 
 #intro-photo {
@@ -81,7 +83,7 @@ h1 {
 }
 
 #start-button {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   align-items: center;
   width: 200px;
   height: 200px;
@@ -90,13 +92,13 @@ h1 {
   border-width: 10px;
   display: inline-block;
   font-size: 7em;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   margin-bottom: 8%;
 }
 
 #start-button:hover {
-  color: rgba(0,0,0,0.0);
+  color: rgba(0, 0, 0, 0);
   background-image: url(../img/play-button-4.png);
   background-size: cover;
   cursor: pointer;
@@ -115,6 +117,7 @@ button:focus {
 }
 
 #countdown {
+  display: none;
   position: fixed;
   z-index: 999;
   top: 0%;
@@ -139,7 +142,7 @@ button:focus {
 }
 
 .message {
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   font-size: 2em;
   padding: 1%;
 }
@@ -187,12 +190,12 @@ button:focus {
   width: 300px;
   height: 100px;
   font-size: 1.5em;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 #clorox {
   position: absolute;
   top: 780px;
-  right:1400px;
+  right: 1400px;
   width: 250px;
   height: 250px;
 }
@@ -200,7 +203,7 @@ button:focus {
 #room-one-key {
   position: absolute;
   top: 600px;
-  right:1000px;
+  right: 1000px;
   width: 500px;
   height: 250px;
 }
@@ -252,7 +255,7 @@ button:focus {
 
 .tic-tac {
   border: 3px solid black;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .tic-tac img {
@@ -260,7 +263,7 @@ button:focus {
 }
 
 .room-three {
-  background-image: url('../img/dungeon.jpg');
+  background-image: url("../img/dungeon.jpg");
   height: 100%;
   width: 100%;
   height: 100vh;
@@ -274,25 +277,25 @@ button:focus {
 /* //Hangman  */
 
 .hangman-buttons {
-  @include corners (5px);
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.5em;
+  @include corners(5px);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.5em;
   width: 200px;
   height: 200px;
   border-radius: 100%;
   border-color: #00b3b4;
   border-style: solid;
   border-width: thick;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   margin-left: 2.5%;
   margin-right: 2.5%;
-  color: #FFF;
+  color: #fff;
 }
 
 .hangman-buttons:hover {
-  color: #FFF;
-  border-color: #FFF;
+  color: #fff;
+  border-color: #fff;
   border-style: solid;
 }
 
@@ -301,7 +304,7 @@ button:focus {
 #twenty-one {
   display: none;
   text-align: center;
-  font-family: "Source Sans Pro",sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #reset {
@@ -316,9 +319,9 @@ button:focus {
   color: #00b3b4;
 }
 
- #roll-playerone {
-  border: 1px solid rgba(0,0,0,0.1);
-  background-color: rgba(0,0,0,0.1);
+#roll-playerone {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   border-radius: 7em;
   padding: 1%;
@@ -326,8 +329,8 @@ button:focus {
 }
 
 #roll-playertwo {
-  border: 1px solid rgba(0,0,0,0.1);
-  background-color: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   display: inline-block;
   border-radius: 7em;
   padding: 1%;
@@ -340,20 +343,20 @@ button:focus {
 }
 
 .twentyone-buttons {
-  @include corners (5px);
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.5em;
+  @include corners(5px);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.5em;
   width: 125px;
   height: 125px;
   border-radius: 100%;
   border-color: #00b3b4;
   border-style: solid;
   border-width: thick;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   margin-left: 2.5%;
   margin-right: 2.5%;
-  color: #FFF;
+  color: #fff;
 }
 
 .result {
@@ -379,19 +382,19 @@ $base-color:$green ; */
 
 @mixin clear {
   &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
- @mixin box-size {
+@mixin box-size {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
- @mixin transition {
+@mixin transition {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -399,17 +402,17 @@ $base-color:$green ; */
 
 @mixin fade {
   -moz-transition: all 1s ease-in;
-  -moz-transition:all 0.3s ease-in-out;
-  -webkit-transition:all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 @mixin opacity {
-  opacity:0.4;
-  filter:alpha(opacity=40);
+  opacity: 0.4;
+  filter: alpha(opacity=40);
   @include fade;
 }
 
-@mixin corners ($radius) {
+@mixin corners($radius) {
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
   border-radius: $radius;
@@ -418,38 +421,38 @@ $base-color:$green ; */
 
 .wrapper {
   display: none;
-  font-family: "Source Sans Pro",sans-serif;
-  height:100%;
-  text-align:center;
-  font-size:22px;
+  font-family: "Source Sans Pro", sans-serif;
+  height: 100%;
+  text-align: center;
+  font-size: 22px;
   @include clear;
-  width:100%;
-  margin:0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 canvas {
-  color:$white;
+  color: $white;
   border: $white dashed 2px;
-  padding:15px;
+  padding: 15px;
 }
 
 #alphabet {
   @include clear;
-  margin:15px auto;
-  padding:0;
-  max-width:900px;
+  margin: 15px auto;
+  padding: 0;
+  max-width: 900px;
 }
 
 #alphabet li {
-  float:left;
+  float: left;
   margin: 0 10px 10px 0;
-  list-style:none;
-  width:35px;
-  height:30px;
-  padding-top:10px;
-  background:$white;
-  color:$base-color;
-  cursor:pointer;
+  list-style: none;
+  width: 35px;
+  height: 30px;
+  padding-top: 10px;
+  background: $white;
+  color: $base-color;
+  cursor: pointer;
   @include corners(5px);
   border: solid 1px $white;
 }
@@ -462,7 +465,7 @@ canvas {
   margin: 0;
   display: block;
   padding: 0;
-  display:block;
+  display: block;
 }
 
 #my-word li {
@@ -471,23 +474,23 @@ canvas {
   margin: 0;
   display: inline-block;
   padding: 0 10px;
-  font-size:1.6em;
+  font-size: 1.6em;
 }
 
 .active {
   @include opacity;
-  cursor:default;
+  cursor: default;
 
-  &:hover{
-      @include fade;
-      @include opacity;
-    }
+  &:hover {
+    @include fade;
+    @include opacity;
+  }
 }
 
-#mylives{
-  font-size:1.6em;
-  text-align:center;
-  display:block;
+#mylives {
+  font-size: 1.6em;
+  text-align: center;
+  display: block;
 }
 
 #clue {
@@ -496,63 +499,62 @@ canvas {
 
 @media (max-width: 767px) {
   #alphabet {
-  padding:0 0 0 15px;
-}
+    padding: 0 0 0 15px;
   }
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
   #alphabet {
-  padding:0 0 0 25px;
+    padding: 0 0 0 25px;
+  }
 }
-  }
 
-  .escape-door {
-    background-image: url('../img/escape.jpg');
-    height: 100%;
-    width: 100%;
-    height: 100vh;
-    display: table;
-    background-size: cover;
-    vertical-align: bottom;
-    font-size: 30px;
-    text-align: center;
-    padding: 25%;
-    font-size: 75px;
-  }
+.escape-door {
+  background-image: url("../img/escape.jpg");
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background-size: cover;
+  vertical-align: bottom;
+  font-size: 30px;
+  text-align: center;
+  padding: 25%;
+  font-size: 75px;
+}
 
-  .escape-door p {
-    font-family: 10em;
-  }
+.escape-door p {
+  font-family: 10em;
+}
 
-  .escape-door p:hover {
-    color: #00b3b4;
-  }
+.escape-door p:hover {
+  color: #00b3b4;
+}
 
-  .hide{
-    display: none;
-  }
+.hide {
+  display: none;
+}
 
-
-  /* //github icon and footer// */
-  #end {
+/* //github icon and footer// */
+#end {
   font-size: 12px;
   text-align: center;
 }
 
-  .icons {
+.icons {
   vertical-align: bottom;
   text-align: center;
   font-size: 35px;
   padding: 3em;
-  }
+}
 
-  .icons a {
+.icons a {
   color: #00b3b4;
-  }
+}
 
-  #final{
-      width: 700px;
-      padding: 5%;
-      border-radius: 15em;
-      display: inline-block;
-  }
+#final {
+  width: 700px;
+  padding: 5%;
+  border-radius: 15em;
+  display: inline-block;
+}
