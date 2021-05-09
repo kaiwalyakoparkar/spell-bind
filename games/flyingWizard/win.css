@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("https://i2.wp.com/www.blogs.hss.ed.ac.uk/pubs-and-publications/files/2017/02/Hogwarts_-_Wizarding_World_of_Harry_Potter_-_Hollywood.jpg?fit=2048%2C1086&ssl=1")
+    no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+body div {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 500px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body div h1 {
+  color: #fff;
+}
+
+body a {
+  width: 100%;
+}
+
+body button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+
+body button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
