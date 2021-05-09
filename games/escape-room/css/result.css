@@ -49,3 +49,9 @@ footer {
     width: 100%;
     font-size: 15px;
 }
+
+a{
+    text-decoration: none;
+    color: rgb(13, 207, 13);
+    font-family: 'Emblema One', cursive;
+}
