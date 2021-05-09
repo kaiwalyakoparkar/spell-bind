@@ -1,0 +1,59 @@
+html {
+    background-color: black
+}
+
+#header-border {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.points {
+    padding: 0px 10px;
+}
+
+#user-name {
+    padding-right: 10px;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
+}
+
+h1 {
+    font-family: 'Emblema One', cursive;
+    font-size: 65px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 30px rgb(2, 255, 2);
+}
+
+.resize {
+    width: 50%;
+}
+
+/* .insane-position {
+    position: relative;
+    float: left;
+} */
+
+/* .bank-position {
+    position: relative;
+    float: right;
+} */
+
+#text-container {
+    /*float: left;
+    padding-left: 5%; */
+    display: flex;
+    justify-content: space-around;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    display: inline-block;
+    margin-top: 150px;
+}
