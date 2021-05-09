@@ -1,0 +1,51 @@
+#header-border {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.points {
+    padding: 0px 10px;
+}
+
+#user-name {
+    padding-right: 10px;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+main {
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Emblema One', cursive;
+    font-size: 50px;
+    text-shadow: 0 0 30px rgb(2, 255, 2);
+}
+
+button {
+    margin: 50px;
+    transition: transform 0.5s;
+    font-family: 'Share Tech Mono', monospace;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+}
+
+button:hover {
+    color: red;
+    transform: scale(1.2);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+}

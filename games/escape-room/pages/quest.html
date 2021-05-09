@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html id="background-image" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quest.css">
+    <link href="https://fonts.googleapis.com/css?family=Emblema+One|Share+Tech+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
+    <title>Quest</title>
+</head>
+<body>
+    <header>
+        <section id="header-border">
+            <p>Name: <span id="user-name"></span></p>        
+            <section class="points">
+                <p> Health Points: <span id="hp"></span>
+            </p>
+            </section>
+
+            <section class="points">
+                <p>Clever Points: <span id="cp"></span>
+            </p>
+            </section>
+        </section>
+    </header>
+    <main>
+        <h1 id="title"></h1>
+        <section>
+            <p id="quest-description"></p>
+        </section>
+
+        <section>
+            <form id="choices">
+                <br>
+                <div id="button-container"><button>Submit</button></div>
+            </form>
+        </section>
+        
+        <section id="scenario-result" hidden>
+            <p id="result-header">Result</p>
+            <p id="result"></p>
+           <div id="button-container"><button id="continue">Continue</button></div> 
+        </section>
+    </main>
+    <script type="module" src="../src/quest.js"></script>
+</body>
+</html>
