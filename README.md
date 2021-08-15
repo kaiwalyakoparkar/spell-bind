@@ -81,7 +81,7 @@ The story of the project is pretty interesting. You are a famous magician in the
 3. Vanilla JS
 4. Js audio API
 
-### 3. Project preview(Screenshots)
+### 3. Project preview.[screenshots](assets/Screenshots)
 1. Escape-room
 2. Flying Wizard 
 
