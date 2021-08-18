@@ -99,14 +99,22 @@ The story of the project is pretty interesting. You are a famous magician in the
 
 ## 🚩Flying Wizard:
 
-![ss20](assets/Screenshots/Flying Wizard/ss20.png)
-
-![ss21](assets/Screenshots/Flying Wizard/ss21.png)
-
-![ss22](assets/Screenshots/Flying Wizard/ss22.png)
-
-![ss23](assets/Screenshots/Flying Wizard/ss23.png)
-
+ <div class = "row">
+     <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss20.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss21.png" height = "200px">
+      </div>
+  </div>
+  <div class = "row">
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss22.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss23.png" height = "200px">
+      </div>
+  </div>
 
 
 ## 📌 Technologies used
