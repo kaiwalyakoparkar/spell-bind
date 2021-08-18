@@ -68,6 +68,37 @@ The story of the project is pretty interesting. You are a famous magician in the
 <!-- ## 📌 Demo Video
 <img src="./img/documentation/demo.gif">
  -->
+
+## 📌 [Screenshots](\assets\Screenshots)
+
+
+
+## 🚩 Escape-room:
+
+![ss5](\assets\Screenshots\Escaperoom\ss5.png)
+
+![ss7](\assets\Screenshots\Escaperoom\ss7.png)
+
+![ss9](\assets\Screenshots\Escaperoom\ss9.png)
+
+![ss11](\assets\Screenshots\Escaperoom\ss11.png)
+
+![ss13](\assets\Screenshots\Escaperoom\ss13.png)
+
+![ss15](\assets\Screenshots\Escaperoom\ss15.png)
+
+## 🚩Flying Wizard:
+
+![ss20](assets\Screenshots\Flying Wizard\ss20.png)
+
+![ss21](assets\Screenshots\Flying Wizard\ss21.png)
+
+![ss22](assets\Screenshots\Flying Wizard\ss22.png)
+
+![ss23](assets\Screenshots\Flying Wizard\ss23.png)
+
+
+
 ## 📌 Technologies used
 
 ### 1. Landing Page
@@ -80,10 +111,6 @@ The story of the project is pretty interesting. You are a famous magician in the
 2. CSS 3
 3. Vanilla JS
 4. Js audio API
-
-### 3. Project preview.[screenshots](assets/Screenshots)
-1. Escape-room
-2. Flying Wizard 
 
 ## 📌 Contribution :
 
