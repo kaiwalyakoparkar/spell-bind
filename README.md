@@ -76,24 +76,24 @@ The story of the project is pretty interesting. You are a famous magician in the
 
   <div class = "row">
      <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss5.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss5.png" height = "200px">
       </div>
       <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss7.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss7.png" height = "200px">
       </div>
       <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss9.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss9.png" height = "200px">
       </div>
   </div>
   <div class = "row">
       <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss11.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss11.png" height = "200px">
       </div>
       <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss13.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss13.png" height = "200px">
       </div>
       <div class = "column">
-        <img src = "/assets/Screenshots/Escaperoom/ss15.png" height = "200px">
+        <img src = "assets/Screenshots/Escape-room/ss15.png" height = "200px">
       </div>
   </div>
 
@@ -162,3 +162,6 @@ All the below mentioned are prominent element of this project and without them i
 <a href="https://github.com/kaiwalyakoparkar/spell-bind/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=kaiwalyakoparkar/spell-bind" />
 </a>
+
+
+
