@@ -69,33 +69,33 @@ The story of the project is pretty interesting. You are a famous magician in the
 <img src="./img/documentation/demo.gif">
  -->
 
-## 📌 [Screenshots](\assets\Screenshots)
+## 📌 [Screenshots](/assets/Screenshots)
 
 
 
 ## 🚩 Escape-room:
 
-![ss5.png](\assets\Screenshots\Escaperoom\ss5.png)
+![ss5.png](/assets/Screenshots/Escaperoom/ss5.png)
 
-![ss7.png](\assets\Screenshots\Escaperoom\ss7.png)
+![ss7.png](/assets/Screenshots/Escaperoom/ss7.png)
 
-![ss9.png](\assets\Screenshots\Escaperoom\ss9.png)
+![ss9.png](/assets/Screenshots/Escaperoom/ss9.png)
 
-![ss11.png](\assets\Screenshots\Escaperoom\ss11.png)
+![ss11.png](/assets/Screenshots/Escaperoom/ss11.png)
 
-![ss13.png](\assets\Screenshots\Escaperoom\ss13.png)
+![ss13.png](/assets/Screenshots/Escaperoom/ss13.png)
 
-![ss15.png](\assets\Screenshots\Escaperoom\ss15.png)
+![ss15.png](/assets/Screenshots/Escaperoom/ss15.png)
 
 ## 🚩Flying Wizard:
 
-![ss20.png](\assets\Screenshots\FlyingWizard\ss20.png)
+![ss20.png](/assets/Screenshots/FlyingWizard/ss20.png)
 
-![ss21.png](\assets\Screenshots\FlyingWizard\ss21.png)
+![ss21.png](/assets/Screenshots/FlyingWizard/ss21.png)
 
-![ss22.png](\assets\Screenshots\FlyingWizard\ss22.png)
+![ss22.png](/assets/Screenshots/FlyingWizard/ss22.png)
 
-![ss23.png](\assets\Screenshots\FlyingWizard\ss23.png)
+![ss23.png](/assets/Screenshots/FlyingWizard/ss23.png)
 
 
 
