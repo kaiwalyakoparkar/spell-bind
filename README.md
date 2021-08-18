@@ -72,20 +72,30 @@ The story of the project is pretty interesting. You are a famous magician in the
 ## 📌 [Screenshots](/assets/Screenshots)
 
 
-
 ## 🚩 Escape-room:
 
-![ss5.png](/assets/Screenshots/Escaperoom/ss5.png)
-
-![ss7.png](/assets/Screenshots/Escaperoom/ss7.png)
-
-![ss9.png](/assets/Screenshots/Escaperoom/ss9.png)
-
-![ss11.png](/assets/Screenshots/Escaperoom/ss11.png)
-
-![ss13.png](/assets/Screenshots/Escaperoom/ss13.png)
-
-![ss15.png](/assets/Screenshots/Escaperoom/ss15.png)
+  <div class = "row">
+     <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss5.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss7.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss9.png" height = "200px">
+      </div>
+  </div>
+  <div class = "row">
+      <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss11.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss13.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "/assets/Screenshots/Escaperoom/ss15.png" height = "200px">
+      </div>
+  </div>
 
 ## 🚩Flying Wizard:
 
