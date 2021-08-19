@@ -11,7 +11,7 @@
 
 ## ❤️ Note for new Contributors : ❤️
 
-Thank you very much for considering this project. Make sure you read [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTING.md) before making contributions. Feel free to raise an issue and after gettting assigned to it, you are all set to work on it.
+Thank you very much for considering this project. Make sure you read [Code of Conduct](CODE_OF_CONDUCT.md) and [Contribution Guidelines](CONTRIBUTING.md) before making contributions. Feel free to raise an issue and after getting assigned to it, you are all set to work on it.
 ## 📌 About the project :
 This project was intentionally built for the MLH's [AbracadabraHack](https://abracadabrahacks.devpost.com/) Hackathon. This project is made for having fun with the help of a nice magician's story and different levels which has a certain difficuly level.
 
@@ -68,6 +68,55 @@ The story of the project is pretty interesting. You are a famous magician in the
 <!-- ## 📌 Demo Video
 <img src="./img/documentation/demo.gif">
  -->
+
+## 📌 [Screenshots](/assets/Screenshots)
+
+
+## 🚩 Escape-room:
+
+  <div class = "row">
+     <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss5.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss7.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss9.png" height = "200px">
+      </div>
+  </div>
+  <div class = "row">
+      <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss11.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss13.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Escape-room/ss15.png" height = "200px">
+      </div>
+  </div>
+
+## 🚩Flying Wizard:
+
+ <div class = "row">
+     <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss20.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss21.png" height = "200px">
+      </div>
+  </div>
+  <div class = "row">
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss22.png" height = "200px">
+      </div>
+      <div class = "column">
+        <img src = "assets/Screenshots/Flying Wizard/ss23.png" height = "200px">
+      </div>
+  </div>
+
+
 ## 📌 Technologies used
 
 ### 1. Landing Page
@@ -121,3 +170,6 @@ All the below mentioned are prominent element of this project and without them i
 <a href="https://github.com/kaiwalyakoparkar/spell-bind/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=kaiwalyakoparkar/spell-bind" />
 </a>
+
+
+
