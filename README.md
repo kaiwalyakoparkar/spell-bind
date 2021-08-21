@@ -103,9 +103,6 @@ The story of the project is pretty interesting. You are a famous magician in the
      <div class = "column">
         <img src = "assets/Screenshots/Flying Wizard/ss20.png" height = "200px">
       </div>
-      <div class = "column">
-        <img src = "assets/Screenshots/Flying Wizard/ss21.png" height = "200px">
-      </div>
   </div>
   <div class = "row">
       <div class = "column">
