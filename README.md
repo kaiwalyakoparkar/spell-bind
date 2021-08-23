@@ -101,7 +101,7 @@ The story of the project is pretty interesting. You are a famous magician in the
 
   <img src = "assets/Screenshots/gif/Witch.gif">
 
-  <img src = "assets/Screenshots/gif/potion.gif">
+  <img src = "assets/Screenshots/gif/potions.gif">
 
 ## 🚩Flying Wizard:
 
@@ -120,7 +120,8 @@ The story of the project is pretty interesting. You are a famous magician in the
   </div> -->
 
 
-<img src = "assets/Screenshots/gif/Flying-w/Flying-wizard.gif">
+<img src = "assets/Screenshots/gif/Flying-w/Flying-wizard.gif
+">
 
 ## 📌 Technologies used
 
