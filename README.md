@@ -160,10 +160,10 @@ git clone https://github.com/<your-user-name>/spell-bind.git
 4. Make a branch of any desired name.
 
 5. Fixes on Landing page :
-    1. All the files are in main folder.
+  1. All the files are in main folder.
 
 6. Fixes in Game panel :
-    2. All the files are in sense-hack folder.
+  2. All the files are in sense-hack folder.
 
 10. Now create a pull request to the parent repository.
 
