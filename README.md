@@ -69,12 +69,12 @@ The story of the project is pretty interesting. You are a famous magician in the
 <img src="./img/documentation/demo.gif">
  -->
 
-## 📌 [Screenshots](/assets/Screenshots)
+## 📌 [Project-preview](/assets/Screenshots)
 
 
 ## 🚩 Escape-room:
 
-  <div class = "row">
+  <!-- <div class = "row">
      <div class = "column">
         <img src = "assets/Screenshots/Escape-room/ss5.png" height = "200px">
       </div>
@@ -95,16 +95,19 @@ The story of the project is pretty interesting. You are a famous magician in the
       <div class = "column">
         <img src = "assets/Screenshots/Escape-room/ss15.png" height = "200px">
       </div>
-  </div>
+  </div> -->
+
+
+
+  <img src = "assets/Screenshots/gif/Witch.gif">
+
+  <img src = "assets/Screenshots/gif/potion.gif">
 
 ## 🚩Flying Wizard:
 
- <div class = "row">
+ <!-- <div class = "row">
      <div class = "column">
         <img src = "assets/Screenshots/Flying Wizard/ss20.png" height = "200px">
-      </div>
-      <div class = "column">
-        <img src = "assets/Screenshots/Flying Wizard/ss21.png" height = "200px">
       </div>
   </div>
   <div class = "row">
@@ -114,8 +117,10 @@ The story of the project is pretty interesting. You are a famous magician in the
       <div class = "column">
         <img src = "assets/Screenshots/Flying Wizard/ss23.png" height = "200px">
       </div>
-  </div>
+  </div> -->
 
+
+<img src = "assets/Screenshots/gif/Flying-w/Flying-wizard.gif  " >
 
 ## 📌 Technologies used
 
@@ -139,7 +144,7 @@ For new contibution or feature :
 1. Open a new issue describing the feature.
 2. Add feature tag to this issue.
 3. Get acceptance from the code maintainers.
-4. Enjoy adding the feature
+4. Enjoy adding the feature.
 
 ## 📌 Steps to contibute :
 
@@ -150,19 +155,19 @@ Fork the project from https://github.com/kaiwalyakoparkar/spell-bind/
 ```git
 git clone https://github.com/<your-user-name>/spell-bind.git
 ```
-3. Open the project in your desired text editor
+3. Open the project in your desired text editor.
 
-4. Make a branch of any desired name
+4. Make a branch of any desired name.
 
 5. Fixes on Landing page :
-    1. All the files are in main folder
+    1. All the files are in main folder.
 
 6. Fixes in Game panel :
-    2. All the files are in sense-hack folder
+    2. All the files are in sense-hack folder.
 
-10. Now create a pull request to the parent repository
+10. Now create a pull request to the parent repository.
 
-6. Wait for acceptance ! Best of luck
+6. Wait for acceptance ! Best of luck.
 
 ## Team Members & Contributors
 All the below mentioned are prominent element of this project and without them it wouldn't be possible.
