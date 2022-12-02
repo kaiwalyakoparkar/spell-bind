@@ -4,7 +4,7 @@
 
 <p align="center">
     ✨ Welcome to Spell Bind ✨ <br />
-    This game embarks the fun and excitment amongst the user. This games helps you think in all the possible aspects to solve the problem in the fun way.
+    This game embarks the fun and excitement amongst the user. This games helps you think in all the possible aspects to solve the problem in the fun way.
 </p>
 <br />
 
